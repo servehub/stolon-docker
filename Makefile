@@ -1,5 +1,5 @@
 VERSION?=$(shell git describe --tags --abbrev=0 | sed 's/v//')
-TAG="sbushub/stolon-docker"
+TAG="servehub/stolon"
 
 bump-tag:
 	GIT_TAG=$$(echo "v${VERSION}" | awk -F. '{$$NF = $$NF + 1;} 1' | sed 's/ /./g'); \
