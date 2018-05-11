@@ -10,7 +10,7 @@ build:
 	@echo "==> Build..."
 	docker build -t ${TAG}:latest -t ${TAG}:${VERSION} .
 
-push: build
+push:
 	@echo "==> Publish new docker image..."
 	docker push ${TAG}:${VERSION}
 	docker push ${TAG}:latest
