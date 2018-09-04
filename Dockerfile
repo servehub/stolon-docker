@@ -1,4 +1,4 @@
-FROM postgres:10.2
+FROM postgres:10.5
 
 RUN apt-get update \
     && apt-get install -y curl \
@@ -10,7 +10,7 @@ RUN mkdir -p /data/stolon && \
 
 VOLUME ["/data/stolon"]
 
-ENV STOLON_VERISON="0.10.0"
+ENV STOLON_VERISON="0.12.0"
 
 RUN curl -Lfs https://github.com/sorintlab/stolon/releases/download/v${STOLON_VERISON}/stolon-v${STOLON_VERISON}-linux-amd64.tar.gz \
       -o /tmp/stolon.tar.gz \
