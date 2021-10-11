@@ -25,4 +25,10 @@ RUN curl -Lfs https://github.com/sorintlab/stolon/releases/download/v${STOLON_VE
     && cp /tmp/stolon-v${STOLON_VERSION}-linux-amd64/bin/* /usr/local/bin/ \
     && rm -rf /tmp/stolon*
 
+ENV WALG_VERSION="1.1"
+
+RUN curl -Lfs https://github.com/wal-g/wal-g/releases/download/v${WALG_VERSION}/wal-g-pg-ubuntu-20.04-amd64 \
+      -o /bin/wal-g \
+    && chmod 755 /bin/wal-g
+
 USER postgres
